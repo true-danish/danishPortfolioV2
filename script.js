@@ -39,8 +39,8 @@ function runMouseTrail() {
       let n = points[index + 1];
 
       if (n) {
-        px = px - (p.x - n.x) * 0.1;
-        py = py - (p.y - n.y) * 0.1;
+        px = px - (p.x - n.x) * 0.3;
+        py = py - (p.y - n.y) * 0.3;
       }
     });
 
