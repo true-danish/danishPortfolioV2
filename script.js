@@ -171,7 +171,7 @@ function runAbout() {
   });
 
   gsap.from(".about-section .content", {
-    opacity: 0,
+    opacity: 0.1,
     duration: 3,
     y: -300,
     scale: 0,

@@ -9,6 +9,7 @@
 }
 :root {
   --color-trail: red;
+  scroll-behavior: smooth;
 }
 html,
 body {
@@ -32,7 +33,7 @@ svg.trail {
 svg.trail path {
   fill: none;
   stroke: var(--color-trail);
-  stroke-width: 12px;
+  stroke-width: 10px;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -203,9 +204,6 @@ svg.string path {
   .name h1.angular {
     display: none;
   }
-  .name h1 span {
-    /* font-size: 10vmax; */
-  }
 }
 
 .slash {
@@ -285,10 +283,6 @@ section.skill-section {
   align-items: center;
 }
 
-.model img {
-  /* object-fit: contain; */
-}
-
 @keyframes rotate {
   0% {
     transform: perspective(1000px) rotateX(-20deg) rotateY(0);
@@ -362,7 +356,8 @@ section.skill-section {
 
 .content:first-child {
   /* background-color: red; */
-  font-size: clamp(5rem, 8vmax, 13vmax);
+  font-weight: bolder;
+  font-size: clamp(5rem, 10vmax, 15vmax);
 }
 
 .content:not(:first-child) {
@@ -377,6 +372,14 @@ section.skill-section {
 
 .content.education h1:first-child {
   font-size: clamp(3rem, 4vmax, 6vmax);
+}
+
+.content.experience {
+  /* white-space: nowrap; */
+  /* background-color: red; */
+
+  height: 100%;
+  font-size: clamp(2rem, 4rem, 6rem);
 }
 
 /* Projects */
@@ -487,4 +490,16 @@ section.skill-section {
   background-image: url("assets/mini.png");
   background-position: center center;
   background-size: cover;
+}
+
+.resume {
+  position: relative;
+  background-color: red;
+}
+.resume:hover::before {
+  position: absolute;
+  bottom: -50%;
+
+  content: "CV";
+  font-size: 1.5rem;
 }
