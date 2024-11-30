@@ -252,34 +252,11 @@ function runLine() {
 }
 
 function runAutomatic() {
-  window.addEventListener("wheel", (e) => {
-    if (e.deltaY < 0) {
-      gsap.to(".automatic .auto-content", {
-        transform: "translateX(-200%)",
-        duration: 3,
-        repeat: -1,
-        ease: "none",
-      });
-
-      gsap.to(".automatic .auto-content img", {
-        rotate: "180deg",
-        duration: 1,
-        ease: "none",
-      });
-    } else {
-      gsap.to(".automatic .auto-content", {
-        transform: "translateX(100%)",
-        duration: 3,
-        repeat: -1,
-        ease: "none",
-      });
-
-      gsap.to(".automatic .auto-content img", {
-        rotate: "0deg",
-        duration: 1,
-        ease: "none",
-      });
-    }
+  gsap.to(".automatic .auto-content", {
+    transform: "translateX(0%)",
+    duration: 3,
+    repeat: -1,
+    ease: "none",
   });
 }
 
