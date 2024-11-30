@@ -3,6 +3,10 @@
   font-family: dugas;
   src: url(assets/dugas_pro/ttf/DugasPro-BlackUltra-condensed.ttf);
 }
+@font-face {
+  font-family: dugas-1;
+  src: url(assets/dugas_pro/ttf/DugasPro-BoldNormal.ttf);
+}
 
 *,
 *::after,
@@ -146,6 +150,7 @@ svg.string path {
 
 .name {
   font-family: "dugas";
+  letter-spacing: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,7 +158,7 @@ svg.string path {
   text-align: center;
 }
 
-.name h1 span {
+.name span {
   font-size: clamp(4rem, 1.2rem + 8vmax, 25vmax);
 
   font-weight: bold;
@@ -557,6 +562,7 @@ section.skill-section {
 }
 
 .right-line {
+  font-family: "Poppins";
   width: 0%;
 }
 
@@ -632,4 +638,60 @@ nav.nav-links ul li:hover::before {
 
 .automatic img {
   width: 50px;
+}
+
+.creative-developer {
+  padding-top: 1rem;
+  font-family: "Poppins", "Roboto";
+  letter-spacing: 3px;
+}
+
+.creative-developer span:first-child {
+  color: #ffc300;
+  font-size: 2rem;
+}
+.creative-developer span:last-child {
+  color: #ffc300;
+  font-size: 3rem;
+}
+
+footer {
+  background-color: var(--black);
+}
+
+footer .circle {
+  position: relative;
+  margin: 0 auto;
+  width: 10rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  text-align: center;
+  align-content: center;
+  z-index: 100;
+  font-size: 3rem;
+  padding: 1rem;
+}
+footer {
+  /* background-color: red; */
+  padding-block: 3rem;
+}
+
+footer .circle::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  width: 100%;
+  transition: all 0.4s ease;
+  aspect-ratio: 1/1;
+  background-color: rgba(255, 255, 255, 0.402);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+footer .circle:hover::before {
+  left: -40px;
+  top: -40px;
+  width: calc(100% + 80px);
 }
