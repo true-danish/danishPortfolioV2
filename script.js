@@ -108,6 +108,13 @@ function runName() {
   firstH1Text.forEach((e) => (firstH1.innerHTML += `<span>${e}</span>`));
   secondH1Text.forEach((e) => (secondH1.innerHTML += `<span>${e}</span>`));
 
+  gsap.from("nav.nav-links ul li", {
+    scale: 0.1,
+    x: 1000,
+    duration: 1,
+    stagger: 0.3,
+  });
+
   gsap.from(".name .title h1.first span", {
     y: -1000,
     duration: 1,
@@ -156,9 +163,9 @@ function runName() {
 
 function runAbout() {
   gsap.to(".about-section .intro", {
-    backgroundImage:
-      "linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)",
-    backgroundColor: "#4158D0",
+    // backgroundImage:
+    //   "linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)",
+    // backgroundColor: "#4158D0",
     transform: "translate(calc(-100% + 100vw))",
     scrollTrigger: {
       scroller: "body",
@@ -230,10 +237,58 @@ function runProjects() {
   });
 }
 
+function runLine() {
+  console.log("line");
+  gsap.to(".right-line,.left-line", {
+    width: "100%",
+
+    scrollTrigger: {
+      scroller: "body",
+
+      trigger: "",
+      scrub: 2,
+    },
+  });
+}
+
+function runAutomatic() {
+  window.addEventListener("wheel", (e) => {
+    if (e.deltaY < 0) {
+      gsap.to(".automatic .auto-content", {
+        transform: "translateX(-200%)",
+        duration: 3,
+        repeat: -1,
+        ease: "none",
+      });
+
+      gsap.to(".automatic .auto-content img", {
+        rotate: "180deg",
+        duration: 1,
+        ease: "none",
+      });
+    } else {
+      gsap.to(".automatic .auto-content", {
+        transform: "translateX(100%)",
+        duration: 3,
+        repeat: -1,
+        ease: "none",
+      });
+
+      gsap.to(".automatic .auto-content img", {
+        rotate: "0deg",
+        duration: 1,
+        ease: "none",
+      });
+    }
+  });
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   runMouseTrail();
   runString();
   runName();
   runAbout();
   runProjects();
+  runLine();
+  runAutomatic();
 });
