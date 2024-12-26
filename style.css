@@ -662,7 +662,7 @@ footer {
 footer .circle {
   position: relative;
   margin: 0 auto;
-  width: 10rem;
+  width: clamp(10rem, 15rem, 15rem);
   aspect-ratio: 1/1;
   border-radius: 50%;
   background-color: white;
@@ -671,7 +671,6 @@ footer .circle {
   align-content: center;
   z-index: 100;
   font-size: 3rem;
-  padding: 1rem;
 }
 footer {
   /* background-color: red; */
